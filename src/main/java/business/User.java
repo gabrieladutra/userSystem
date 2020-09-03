@@ -3,7 +3,7 @@ package business;
 public class User {
 
     private String name;
-    private int age;
+    private Integer age;
     private  String cpf;
 
 
@@ -40,14 +40,14 @@ public class User {
     }
 
 
-    public String validateStringIsNullOrBlank(String paramString){
+    private static String validateStringIsNullOrBlank(final String paramString){
         if(paramString == null || paramString.isBlank()){
             throw new IllegalArgumentException("The string of parameter is null or blank");
         }
         return paramString;
     }
 
-    public  Integer validateAge(Integer number){
+    private static Integer validateAge(final Integer number){
         if(number < 0){
             throw new IllegalArgumentException("The number of parameter is negative");
         }

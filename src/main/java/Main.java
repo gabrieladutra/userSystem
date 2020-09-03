@@ -5,9 +5,8 @@ import presentation.UserServices;
 
 public class Main {
   public static void main(String[] args) {
-    var repository = UserRepository.getInstance();
-    var services = new UserServices();
-    var menu = new Menu();
+    final var services = new UserServices();
+    final var menu = new Menu();
     Integer option = null;
 
     while (option == null || option != 0) {

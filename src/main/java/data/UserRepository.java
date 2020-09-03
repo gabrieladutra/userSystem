@@ -45,7 +45,7 @@ public class UserRepository {
     }
   }
 
-  public void addUser(User user) {
+  public void addUser(final User user) {
     users.add(user);
     writeUser();
   }
@@ -55,7 +55,7 @@ public class UserRepository {
   }
 
 
-  public User getUser(String cpf) {
+  public User getUser(final String cpf) {
     for (User user : users) {
       if (user.getCpf().equals(cpf)) {
         return user;
@@ -64,7 +64,7 @@ public class UserRepository {
     return null;
   }
 
-  public void deleteUser(String cpf) {
+  public void deleteUser(final String cpf) {
     for (User user : users) {
       if (user.getCpf().equals(cpf)) {
         users.remove(user);
@@ -77,7 +77,7 @@ public class UserRepository {
     return users.size();
   }
 
-  public ArrayList<User> searchUser(String name) {
+  public ArrayList<User> searchUser(final String name) {
     var searchedUsers = new ArrayList<User>();
     for (User user : users) {
       if (user.getName().contains(name)) {
@@ -87,7 +87,7 @@ public class UserRepository {
     return searchedUsers;
   }
 
-  public void alterUser(String cpf) {
+  public void alterUser(final String cpf) {
     for (User user : users) {
       if (user.getCpf().equals(cpf)) {
         var menu = new Menu();
